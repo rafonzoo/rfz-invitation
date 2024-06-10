@@ -1,0 +1,36 @@
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
+
+async function main() {
+  // const user = await prisma.user.upsert({
+  //   where: { email: 'alice@cullen.com' },
+  //   update: {},
+  //   create: {
+  //     uid: '4a488705-f4fc-41d1-969c-2e11d447b98c',
+  //     email: 'alice@cullen.com',
+  //   },
+  // })
+
+  // ...com/undangan/claire-leon-x3dv2a?to=Rafa
+  const invitation = await prisma.invitation.upsert({
+    where: { wid: 'x3dv2a' },
+    update: {},
+    create: {
+      wid: 'x3dv2a',
+      name: 'claire-leon',
+      type: 'wedding',
+      userId: '4a488705-f4fc-41d1-969c-2e11d447b98c',
+    },
+  })
+
+  console.log({ invitation })
+}
+
+main()
+  .then(async () => void (await prisma.$disconnect()))
+  .catch(async (e) => {
+    console.error(e)
+    await prisma.$disconnect()
+    process.exit(1)
+  })

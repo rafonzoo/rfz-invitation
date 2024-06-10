@@ -1,0 +1,11 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "explorer.sortOrder": "type",
+  "prettier.configPath": "./.prettierrc.json",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "tailwindCSS.classAttributes": ["className", ".*Classes"],
+  "tailwindCSS.experimental.classRegex": [
+    ["tw\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"]
+  ]
+}
