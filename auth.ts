@@ -4,6 +4,7 @@ import Github from 'next-auth/providers/github'
 import Google from 'next-auth/providers/google'
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  pages: { signIn: '/akun/masuk' },
   providers: [Google, Github],
   callbacks: {
     signIn: async (params) => {
@@ -24,9 +25,5 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
       return true
     },
-  },
-  pages: {
-    signIn: '/akun/masuk',
-    error: '/akun/masuk',
   },
 })

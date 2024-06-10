@@ -14,7 +14,7 @@ export default async function Home() {
         </Link>
       </p>
       <p>
-        <Link prefetch={false} href='/api/auth/signin'>
+        <Link prefetch={false} href='/akun/masuk'>
           sign in
         </Link>
       </p>

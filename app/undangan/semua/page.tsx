@@ -7,7 +7,7 @@ export default async function AllInvitation() {
   const user = session?.user
 
   if (!user) {
-    return redirect('/api/auth/signin')
+    return redirect('/akun/masuk')
   }
 
   return (
@@ -24,7 +24,7 @@ export default async function AllInvitation() {
       <form
         action={async () => {
           'use server'
-          await signOut({ redirectTo: '/api/auth/signin' })
+          await signOut({ redirectTo: '/akun/masuk' })
         }}
       >
         <p>
