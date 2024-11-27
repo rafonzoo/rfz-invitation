@@ -296,7 +296,7 @@ const ParallaxEffect: RF<ParallaxEffectProps> = (props) => {
 
   return (
     <div
-      className={!scrollTrigger ? 'py-3 lg:py-5' : 'mt-[-100lvh] h-[250lvh]'}
+      className={!scrollTrigger ? 'py-3 lg:py-5' : 'mt-[-100svh] h-[250svh]'}
     >
       <div
         ref={stickyRef}

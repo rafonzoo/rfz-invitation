@@ -48,32 +48,3 @@ html:not(.no-js) [data-aos^='fade'][data-aos^='fade'] {
 html:not(.no-js) [data-aos^='fade'][data-aos^='fade'].aos-animate {
   @apply !translate-y-0 !opacity-100;
 }
-
-/*
-@media screen and (max-width: 767px) {
-  .h-screen {
-    height: 100vh;
-    height: 100lvh;
-  }
-
-  .min-h-dvh {
-    min-height: 100vh;
-    min-height: 100dvh;
-  }
-
-  .-mt-screen {
-    margin-top: -100vh;
-    margin-top: -100lvh;
-  }
-
-  .mt-\[-100lvh\] {
-    margin-top: -100vh;
-    margin-top: -100lvh;
-  }
-
-  .h-\[250lvh\] {
-    height: 250vh;
-    height: 250lvh;
-  }
-}
-*/
