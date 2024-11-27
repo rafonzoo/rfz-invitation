@@ -8,22 +8,23 @@ export const viewport: Viewport = {
 }
 
 type Props = {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(arg: Props): Promise<Metadata> {
+  const { id } = await arg.params
   const defaultMetadata = {
     title: 'Undangan | RFZ',
     description:
       'Undangan elegan yang paling mudah dan intuitif untuk berbagai kebutuhan.',
   }
 
-  if (!params.id) {
+  if (!id) {
     return defaultMetadata
   }
 
   const invitation = await prisma.invitation.findUnique({
-    where: { id: params.id },
+    where: { id },
     select: { slug: true, type: true },
   })
 

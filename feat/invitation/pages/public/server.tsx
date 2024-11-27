@@ -15,24 +15,25 @@ const HERO = Config.GalleryType.InvitationHero
 const MUSIC = Config.GalleryType.InvitationMusic
 
 type Params = {
-  params: {
+  params: Promise<{
     id?: string
-  }
+  }>
 }
 
 export default async function InvitationPublicPage(arg: Params) {
-  const params = arg.params.id?.split('-')
+  const { id: _id } = await arg.params
+  const invitationId = _id?.split('-')
   const session = await auth()
   const enableAnimation = true
 
   let _invitation
   let guests: InvitationDetail['guests'] | undefined
 
-  if (!params?.length || params.length > 2) {
+  if (!invitationId?.length || invitationId.length > 2) {
     return notFound()
   }
 
-  const [id, guestId] = params
+  const [id, guestId] = invitationId
 
   try {
     if (!session?.user?.email) {

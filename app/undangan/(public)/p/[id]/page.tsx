@@ -13,18 +13,19 @@ export const viewport: Viewport = {
 }
 
 type Props = {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const args = params.id?.split('-')
+export async function generateMetadata(arg: Props): Promise<Metadata> {
+  const { id } = await arg.params
+  const args = id?.split('-')
 
   const defaultMetadata = {
     title: 'Undangan | RFZ',
     description: 'Undangan elegan yang paling mudah dan intuitif.',
   }
 
-  if (!params.id || !args?.length || args.length > 2) {
+  if (!id || !args?.length || args.length > 2) {
     return defaultMetadata
   }
 

@@ -15,9 +15,7 @@ import InvitationEditorMore from '@/feat/invitation/pages/editor/more'
 import DayJS from '@/lib/dayjs'
 
 type Params = {
-  params: {
-    id?: string
-  }
+  params: Promise<{ id?: string }>
 }
 
 const HERO = Config.GalleryType.InvitationHero
@@ -26,7 +24,7 @@ const MUSIC = Config.GalleryType.InvitationMusic
 
 export default async function InvitationPageEditor(arg: Params) {
   const { email } = await getCheckUser()
-  const invitationId = arg.params.id
+  const { id: invitationId } = await arg.params
 
   if (!invitationId) {
     return notFound()

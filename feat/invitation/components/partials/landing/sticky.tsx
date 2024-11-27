@@ -88,7 +88,7 @@ const LandingSticky: RFA<LandingStickyProps> = (args) => {
         enable ? 'h-[2000px]' : 'h-full'
       )}
     >
-      <div className='sticky left-0 top-0 h-screen min-h-[663px] overflow-hidden'>
+      <div className='sticky left-0 top-0 h-screen min-h-[525px] overflow-hidden'>
         <figure
           className={tw(
             'absolute left-0 top-0 z-1 h-full w-full transition-opacity duration-600',

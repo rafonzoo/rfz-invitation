@@ -12,10 +12,7 @@ import CollectionList from '@/feat/invitation/pages/dasboard/collection/list'
 import DayJS from '@/lib/dayjs'
 
 const CollectionAddNew = dynamic(
-  () => import('@/feat/invitation/pages/dasboard/collection/add'),
-  {
-    ssr: false,
-  }
+  () => import('@/feat/invitation/pages/dasboard/collection/add')
 )
 
 export default async function InvitationPageCollection() {

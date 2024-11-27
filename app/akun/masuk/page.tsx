@@ -4,14 +4,15 @@ import { Routes } from '@/core/config'
 import ButtonAuth from '@/components/button/auth'
 
 type SigninProps = {
-  searchParams: {
+  searchParams: Promise<{
     error: 'OAuthCallbackError'
-  }
+  }>
 }
 
 export default async function Signin(props: SigninProps) {
   const session = await auth()
-  const isProviderError = props.searchParams.error === 'OAuthCallbackError'
+  const { error } = await props.searchParams
+  const isProviderError = error === 'OAuthCallbackError'
 
   if (session) {
     redirect(Routes.invitationKoleksi)
@@ -19,7 +20,7 @@ export default async function Signin(props: SigninProps) {
 
   return (
     <main>
-      {props.searchParams.error && (
+      {error && (
         <p className='mb-3 text-red-600'>
           {isProviderError ? (
             <>Silahkan gunakan provider lain atau coba beberapa saat lagi</>
