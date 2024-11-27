@@ -92,7 +92,7 @@ const Sidebar: RF<SidebarProps> = ({ children, className }) => {
   return (
     <aside
       className={tw(
-        'sticky top-0 hidden h-[100dvh] w-full md:block md:max-w-[295px]',
+        'sticky top-0 hidden h-[100svh] w-full md:block md:max-w-[295px]',
         className
       )}
     >

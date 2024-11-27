@@ -13,7 +13,7 @@ export default async function InvitationDashboardLayout({ children }: Page) {
   const user = await getCheckUser()
 
   return (
-    <div className='flex min-h-[100dvh] bg-zinc-100 supports-[min-height:_100svh]:min-h-[100svh] md-max:flex-col dark:bg-black'>
+    <div className='flex min-h-[100svh] bg-zinc-100 supports-[min-height:_100svh]:min-h-[100svh] md-max:flex-col dark:bg-black'>
       <Sidebar>
         <div className='h-6 w-10'></div>
       </Sidebar>
