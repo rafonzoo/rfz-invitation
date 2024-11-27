@@ -2,8 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer {
-  html {
-    -webkit-tap-highlight-color: transparent;
+@layer components {
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
   }
 }
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* FIX IOS ALIGNED DATE INPUT */
+input::-webkit-date-and-time-value {
+  text-align: left;
+}
+
+/* FIX IOS PADDING DATE AND TIME INPUT */
+input::-webkit-datetime-edit {
+  padding: 0;
+}
+
+/* FIX IOS COLOR DATE AND TIME INPUT */
+input[disabled]::-webkit-datetime-edit-year-field,
+input[disabled]::-webkit-datetime-edit-month-field,
+input[disabled]::-webkit-datetime-edit-day-field,
+input[disabled]::-webkit-datetime-edit-hour-field,
+input[disabled]::-webkit-datetime-edit-minute-field,
+input[disabled]::-webkit-datetime-edit-second-field,
+input[disabled]::-webkit-datetime-edit-millisecond-field,
+input[disabled]::-webkit-datetime-edit-meridiem-field,
+input[disabled]::-webkit-datetime-edit-text {
+  color: inherit;
+}
+
+/* Aos */
+.aos-init {
+  will-change: opacity, transform;
+}
+
+html:not(.no-js) [data-aos^='fade'][data-aos^='fade'] {
+  @apply !translate-y-12 !opacity-0;
+}
+
+html:not(.no-js) [data-aos^='fade'][data-aos^='fade'].aos-animate {
+  @apply !translate-y-0 !opacity-100;
+}
+
+/*
+@media screen and (max-width: 767px) {
+  .h-screen {
+    height: 100vh;
+    height: 100lvh;
+  }
+
+  .min-h-dvh {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .-mt-screen {
+    margin-top: -100vh;
+    margin-top: -100lvh;
+  }
+
+  .mt-\[-100lvh\] {
+    margin-top: -100vh;
+    margin-top: -100lvh;
+  }
+
+  .h-\[250lvh\] {
+    height: 250vh;
+    height: 250lvh;
+  }
+}
+*/

@@ -1,3 +1,22 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "prettier"],
+  "plugins": ["import", "unused-imports"],
+  "ignorePatterns": ["feat/invitation/config.ts"],
+  "rules": {
+    "unused-imports/no-unused-imports": ["warn", { "vars": "local" }],
+    "sort-imports": ["warn", { "ignoreDeclarationSort": true }],
+    "import/order": ["warn", {
+      "pathGroupsExcludedImportTypes": ["type"],
+      "groups": ["type", "builtin", "external", "internal", "sibling"],
+      "pathGroups": [
+        { "pattern": "next/link", "group": "internal", "position": "after" },
+        { "pattern": "next/dynamic", "group": "internal", "position": "after" },
+        { "pattern": "@/components/**", "group": "internal", "position": "after" },
+        { "pattern": "@/feat/**/components/**", "group": "internal", "position": "after" },
+        { "pattern": "@/feat/**/pages/**", "group": "internal", "position": "after" },
+        { "pattern": "@/lib/**", "group": "internal", "position": "after" },
+        { "pattern": "@/lib", "group": "external", "position": "after" }
+      ]
+    }]
+  }
 }

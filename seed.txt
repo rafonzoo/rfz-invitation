@@ -12,7 +12,7 @@ async function main() {
   //   },
   // })
 
-  // ...com/undangan/claire-leon-x3dv2a?to=Rafa
+  // ...com/undangan/x3dv2a?dari=claire-leon?kpd=Rafa
   const invitation = await prisma.invitation.upsert({
     where: { wid: 'x3dv2a' },
     update: {},

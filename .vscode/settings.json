@@ -4,8 +4,9 @@
   "prettier.configPath": "./.prettierrc.json",
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.preferences.preferTypeOnlyAutoImports": true,
-  "tailwindCSS.classAttributes": ["className", ".*Classes"],
+  "tailwindCSS.classAttributes": ["className", ".*Classes", "cva"],
   "tailwindCSS.experimental.classRegex": [
     ["tw\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"]
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
