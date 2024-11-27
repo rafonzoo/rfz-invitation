@@ -10,6 +10,11 @@ const nextConfig = {
   devIndicators: {
     appIsrStatus: false,
   },
+  api: {
+    bodyParser: {
+      sizeLimit: '20mb',
+    },
+  },
   images: {
     remotePatterns: [
       {
