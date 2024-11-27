@@ -45,9 +45,9 @@ const LandingContent: RFA<LandingContentProps> = ({
       opacity: '0.001',
       scrollTrigger: {
         trigger: '#section-keys',
-        start: 'top bottom',
+        start: 'top bottom-=82px',
         endTrigger: '#section-keys li:first-child',
-        end: 'bottom bottom',
+        end: 'bottom bottom-=41px',
         scrub: true,
         onRefresh: () => {
           titleRef.current?.classList.add('will-change-opacity')
