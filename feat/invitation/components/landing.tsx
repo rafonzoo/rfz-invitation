@@ -27,7 +27,7 @@ const InvitationLandingSection: RFA<InvitationLandingProps> = ({
     <section
       id='section-landing'
       className={tw(
-        'relative z-2 h-screen min-h-[525px]',
+        'relative z-2 h-[100dvh] min-h-[525px]',
         !enableAnimation && '-mt-[57px]'
       )}
     >
